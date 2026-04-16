@@ -1,2 +1,4 @@
 # Portfolio
-A Portfolio Web Page using Django, SQL and REST API using Django's Admin Panel to Dynamically Add Projects.
+A Portfolio Web Page using Django, SQL and REST API.
+
+Requirements.txt can be used to import all necessary python libraries to make the project work.
