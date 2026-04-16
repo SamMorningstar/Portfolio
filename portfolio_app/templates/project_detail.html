@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ project.title }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background: #f4f7fb; color: #222; }
+        header { background: #1f2937; color: #fff; padding: 2rem 1rem; text-align: center; }
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+        .card { background: #fff; border-radius: 12px; padding: 2rem; box-shadow: 0 12px 24px rgba(0, 0, 0, .08); }
+        h1 { margin-top: 0; }
+        .intro { color: #4a5568; line-height: 1.7; }
+        .section-title { margin: 2rem 0 1rem; }
+        .button { display: inline-block; margin-top: 1.5rem; padding: .8rem 1.2rem; border-radius: 8px; background: #2563eb; color: #fff; text-decoration: none; }
+        .button:hover { background: #1d4ed8; }
+        footer { text-align: center; padding: 2rem 1rem; color: #6b7280; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>{{ project.title }}</h1>
+            <p>Project details and description</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="card">
+            <p class="intro">{{ project.description }}</p>
+
+            <section>
+                <h2 class="section-title">About this project</h2>
+                <p>{{ project.details }}</p>
+            </section>
+
+            <a class="button" href="{% url 'home' %}">Back to portfolio</a>
+        </article>
+    </main>
+
+    <footer>
+        <p>Built with Django and Node.js</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Home</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background: #f4f7fb; color: #222; }
+        header { background: #1f2937; color: #fff; padding: 2rem 1rem; text-align: center; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 1.5rem; }
+        .grid { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+        .card { background: #fff; border-radius: 12px; padding: 1.4rem; box-shadow: 0 12px 24px rgba(0, 0, 0, .08); }
+        .card h2 { margin: 0 0 .75rem; }
+        .card p { line-height: 1.6; color: #4a5568; }
+        .button { display: inline-block; margin-top: 1rem; padding: .7rem 1rem; border-radius: 8px; background: #2563eb; color: #fff; text-decoration: none; }
+        .button:hover { background: #1d4ed8; }
+        footer { text-align: center; padding: 2rem 1rem; color: #6b7280; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>My Portfolio</h1>
+            <p>Projects built with Django, Node.js, and modern frontend design.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section>
+            <h2>Featured Projects</h2>
+            <div class="grid">
+                {% for item in portfolio_items %}
+                    <article class="card">
+                        <h2>{{ item.title }}</h2>
+                        <p>{{ item.description }}</p>
+                        <a class="button" href="/projects/{{ item.slug }}/">View details</a>
+                    </article>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section style="margin-top: 2rem;">
+            <h2>About this portfolio</h2>
+            <p>See project details and learn more about the development workflow.</p>
+            <a class="button" href="/about/">About me</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>Built with Django and Node.js</p>
+    </footer>
+</body>
+</html><!DOCTYPE html>
